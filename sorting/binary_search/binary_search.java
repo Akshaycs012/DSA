@@ -202,9 +202,7 @@ public class binary_search{
     }
 
     public static void main(String[] args){
-        int[] arr = {4,5,6,7,8,0,1,2,3};
-        int result = pivot(arr);
-        System.out.println(arr[result]);
+
         
     } 
 }
