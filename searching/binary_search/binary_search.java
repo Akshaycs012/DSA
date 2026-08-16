@@ -160,7 +160,6 @@ public class binary_search{
         return -1;
     }
     
-
     // finding peak of an element
     static int peakOfAnMountain(int[] arr){
         int start = 0;
@@ -201,8 +200,25 @@ public class binary_search{
         return -1;
     }
 
+    // find number of rotation in an array
+    static int rotation(int[] arr){
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+
+            if (arr[mid] > arr[end]) {
+                start = mid + 1;
+            } else {
+                end = mid;
+            }
+        }
+
+        return start;
+    }
+
     public static void main(String[] args){
 
-        
     } 
 }
