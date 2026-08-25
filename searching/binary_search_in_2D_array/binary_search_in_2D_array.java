@@ -51,9 +51,9 @@ public class binary_search_in_2D_array {
     public static void main(String[] args){
         int[][] matrix = {
             {10,20,30,40},
-            {15,25,35,45}
+            {50,60,70,80}
         };
-        System.out.println(findr(matrix,30));
+        System.out.println(findr(matrix,90));
     }
 
 }
