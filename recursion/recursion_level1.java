@@ -68,7 +68,59 @@ public class recursion_level1{
         return powerOfNum(a,b-1) * a;
     }
 
+    //predict output
+    static void fun(int n){
+        if(n == 0){
+            return;
+        }
+        System.out.print(n+" ");
+        fun(n-1);
+        System.out.print(n+" ");
+    }
+
+    // recursion for sum digit
+    static int sumDigits(int n){
+        if(n % 10 == 0){
+            return 0;
+        }
+        System.out.println(n+" "+n%10);
+        return sumDigits(n/10) + n % 10;
+
+    }
+
+    // recursion for counting digits
+    static int countDigits(int n){
+        if(n % 10 == 0){
+            return 0;
+        }
+
+        return countDigits(n-1) + 1;
+    }
+
+    // reverse a number
+    static int reverseNumber(int n,int rev){
+        if(n % 10 == 0){
+            return rev;
+        }
+
+        int lasdig = n % 10;
+        int nexdig = rev * 10 + lasdig;
+
+        return reverseNumber(n-1,nexdig);
+    }
+
+    // recursion function for palindrome number by reversing the number
+    static boolean palindrome(int original,int n,int rev){
+        if(n == 0 ){
+            return rev == original;
+        }
+        int last = n % 10;
+        int first = rev * 10 + last;
+        return palindrome(original,n/10,first);
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(powerOfNum(2,5));
+        System.out.println();
     }
 }
