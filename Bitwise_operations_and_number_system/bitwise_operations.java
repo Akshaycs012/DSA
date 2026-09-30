@@ -26,13 +26,34 @@ package Bitwise_operations_and_number_system;
     Right Shift Operator (>>):
     a >> b == a / 2^b
 
+    Negative of given number
+    2's complement: add 1 to the complement
+
+    
 */
 
 
 public class bitwise_operations {
 
+    // number is odd or even (bit operator)
+    static boolean oddeven(int n){
+        return (n & 1) == 1; // AND
+    }
 
+    // in an array every number appears twice only one appears once find the number
+    // using XOR
+    static int uniquenumber(int[] arr){
+        int unique = 0;
+        for(int n: arr){
+            unique ^= n; // XOR
+        }
+        return unique;
+    }
 
+    // find i th bit of number
+    static int bitNumber(int n,int i){
+        return n & (1 << (n-i));
+    }
 
     public static void main(String[] args){
 
