@@ -92,9 +92,24 @@ public class arrays {
         return seclargest;
     }
 
+    // Remove duplicate characters
+    static StringBuilder removeDuplicate(String name){
+        StringBuilder n = new StringBuilder(name);
+        for(int i=0;i < n.length();i++){
+            for(int j=i+1;j < n.length();){
+                if(n.charAt(i) == n.charAt(j)){
+                    n.deleteCharAt(j);
+                }else{
+                    j++;
+                }
+            }
+        }
+        return n;
+    }
 
 
-    // print array with custom text 
+
+    // print integer array with custom text 
     static void printarr(String text, int[] arr){
         System.out.print(text);
         for(int i : arr){
@@ -102,10 +117,11 @@ public class arrays {
         }
         System.out.println("");
     }
+
     public static void main(String[] args){
 
-        int[] arr = {10,5,8,20};
-        System.out.println(secondLargest(arr));
+        String name = "banaaaa";
+        System.out.println(removeDuplicate(name));
 
     }
 
