@@ -29,6 +29,8 @@ package Bitwise_operations_and_number_system;
     Negative of given number
     2's complement: add 1 to the complement
 
+    Range of numbers for n bits:
+    -2^(n - 1) to 2^(n-1) - 1
     
 */
 
@@ -55,7 +57,9 @@ public class bitwise_operations {
         return n & (1 << (n-i));
     }
 
+
     public static void main(String[] args){
+        
 
     }
 }
