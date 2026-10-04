@@ -107,7 +107,21 @@ public class arrays {
         return n;
     }
 
+    // Reverse work in a sentence
+    static void reverseWord(String name){
+        String[] arr = name.split(" ");
+        String temp;
+        int n = arr.length;
+        printarr("before ",arr);
+        System.out.println(n+" "+(n/2));
+        for(int i=0;i < n / 2;i++){
+            temp = arr[i];
+            arr[i] = arr[n-1-i];
+            arr[n-1-i] = temp;
+        }
+        printarr("after: ",arr);
 
+    }
 
     // print integer array with custom text 
     static void printarr(String text, int[] arr){
@@ -118,10 +132,17 @@ public class arrays {
         System.out.println("");
     }
 
+    // print string array with custom text
+    static void printarr(String text,String[] arr){
+        System.out.println(text);
+        for(String i : arr){
+            System.out.print(i+" ");
+        }
+    }
     public static void main(String[] args){
 
-        String name = "banaaaa";
-        System.out.println(removeDuplicate(name));
+        String name = "aaa bbb ccc ddd ss";
+        reverseWord(name);
 
     }
 
