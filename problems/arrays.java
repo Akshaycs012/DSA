@@ -32,9 +32,65 @@ public class arrays {
         return count;
     }
 
+    // Prefix sum / Cumulative sum
+    static int prefixSum(int[] arr,int target){
+        int n = arr.length;
+        int[] prefix = new int[n+1];
+        prefix[0] = 0;
+        int count = 0;
+
+        for(int i=0;i<n;i++){
+            prefix[i+1] = prefix[i]+arr[i];
+        }
+
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                if(prefix[j+1]-prefix[i] == target){
+                    System.out.println(i+" to "+j+" gives "+target);
+                    count++;
+                }
+            }
+        }
+
+
+        return count;
+    }
+
+    // Move all zeros to the end
+    static void moveZero(int[] arr){
+        int left = 0;
+        int right = 1;
+        printarr("Before: ",arr);
+        while(left < right && right < arr.length){
+            if(arr[left] == 0 && arr[right] != 0){
+                arr[left] = arr[right];
+                arr[right] = 0;
+                left++;
+                right++; 
+            }else if(arr[left] == 0 && arr[right] == 0){
+                right++;
+            }else{
+                left++;
+                right++;
+            }
+        }
+        printarr("After: ",arr);
+    }
+    
+
+    // print array with custom text 
+    static void printarr(String text, int[] arr){
+        System.out.print(text);
+        for(int i : arr){
+            System.out.print(i+" ");
+        }
+        System.out.println("");
+    }
     public static void main(String[] args){
-        int[] arr = {1,2,3,4,5,6,7,8,9,10};
-        System.out.println(twoElementSum(arr,6));
+
+        int[] arr = {0,0,0,0,0,0,1,2,3,4};
+        moveZero(arr);
+
     }
 
 }
